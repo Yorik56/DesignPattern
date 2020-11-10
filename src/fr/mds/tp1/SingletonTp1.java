@@ -23,17 +23,18 @@ public class SingletonTp1 {
 		System.out.println(String.format("Nombre d'Entity1 %d", NewSingleton.getInstance().getSingletonList().stream().count()));
 
 		Entity1 e11 = new Entity1();
-		e11.setId(15);
+		NewSingleton.getInstance().autoIncrementId(e11);
 		e11.setData("data e1 15");
 		
-		NewSingleton.getInstance().getSingletonList().add(e11);
+		NewSingleton.getInstance().addEntityList(e11);
 
 
 		Entity1 e12 = new Entity1();
-		e12.setId(16);
+		NewSingleton.getInstance().autoIncrementId(e12);
 		e12.setData("data e1 16");
 
-		NewSingleton.getInstance().getSingletonList().add(e12);
+
+		NewSingleton.getInstance().addEntityList(e12);
 
 		for (Entity1 item :NewSingleton.getInstance().getSingletonList()) {
 			System.out.println(item);
